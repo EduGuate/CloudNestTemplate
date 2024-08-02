@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudNest - Your Reliable Web Hosting Solution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5a623;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .hero {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .btn-primary:hover {
+            background-color: #3a80d2;
+            border-color: #3a80d2;
+        }
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color: var(--primary-color);">Cloud</span><span style="color: var(--secondary-color);">Nest</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" style="background-image: url('/api/placeholder/1920/1080');">
+        <div class="container text-white">
+            <div class="row hero-content">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Welcome to CloudNest</h1>
+                    <p class="lead">Experience lightning-fast, secure, and reliable web hosting for your website.</p>
+                    <a href="#pricing" class="btn btn-primary btn-lg">Get Started</a>
+                    <a href="#features" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose CloudNest?</h2>
+            <div class="row">
+                <div class="col-md-4 text-center mb-4">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Our SSD-based infrastructure ensures your website loads in the blink of an eye.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Fort Knox Security</h3>
+                    <p>Advanced firewalls and free SSL certificates keep your data safe and secure.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Easy Management</h3>
+                    <p>User-friendly control panel for effortless website and server management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="/api/placeholder/200/200" alt="Customer 1" class="testimonial-img mb-3">
+                            <p class="card-text">"CloudNest's speed is unmatched. My e-commerce site has never been faster!"</p>
+                            <h5 class="card-title">Sarah Johnson</h5>
+                            <p class="card-subtitle mb-2 text-muted">Owner, Fashion Boutique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="/api/placeholder/200/200" alt="Customer 2" class="testimonial-img mb-3">
+                            <p class="card-text">"Their customer support is outstanding. They solved my issue in minutes!"</p>
+                            <h5 class="card-title">Michael Chen</h5>
+                            <p class="card-subtitle mb-2 text-muted">Tech Blogger</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="/api/placeholder/200/200" alt="Customer 3" class="testimonial-img mb-3">
+                            <p class="card-text">"CloudNest's reliability is impressive. Zero downtime in 6 months!"</p>
+                            <h5 class="card-title">Emma Rodriguez</h5>
+                            <p class="card-subtitle mb-2 text-muted">CTO, StartUp Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Choose Your Perfect Plan</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Starter Nest</h3>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title text-center">$4.99<small class="text-muted">/mo</small></h2>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>✅ 1 Website</li>
+                                <li>✅ 10 GB SSD Storage</li>
+                                <li>✅ Unmetered Bandwidth</li>
+                                <li>✅ Free SSL Certificate</li>
+                                <li>✅ 24/7 Support</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Pro Nest</h3>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title text-center">$9.99<small class="text-muted">/mo</small></h2>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>✅ Unlimited Websites</li>
+                                <li>✅ 50 GB SSD Storage</li>
+                                <li>✅ Unmetered Bandwidth</li>
+                                <li>✅ Free SSL Certificate</li>
+                                <li>✅ 24/7 Priority Support</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-primary">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Enterprise Nest</h3>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title text-center">$24.99<small class="text-muted">/mo</small></h2>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>✅ Unlimited Websites</li>
+                                <li>✅ 100 GB SSD Storage</li>
+                                <li>✅ Unmetered Bandwidth</li>
+                                <li>✅ Free SSL Certificate</li>
+                                <li>✅ 24/7 Premium Support</li>
+                                <li>✅ Daily Backups</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-primary">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Get in Touch</h2>
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 bg-dark">
+        <div class="container text-center text-white">
+            <p>&copy; 2024 CloudNest Hosting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
