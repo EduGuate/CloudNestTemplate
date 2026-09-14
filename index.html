@@ -387,6 +387,40 @@
   .footer-newsletter input{flex:1;padding:11px 14px;border-radius:var(--radius-sm);border:1px solid var(--color-border);background:var(--color-bg);color:var(--color-fg);}
   .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:28px;border-top:1px solid var(--color-border);font-size:.85rem;color:var(--color-muted-fg);}
   .footer-bottom .social-row .icon-btn{width:36px;height:36px;}
+  .footer-bottom .footer-credit{color:var(--color-muted-fg);}
+  .footer-bottom .footer-credit a{color:var(--color-primary);font-weight:700;}
+  .footer-bottom .footer-credit a:hover{text-decoration:underline;}
+
+  /* ---------- Template watermark ---------- */
+  .tpl-watermark{
+    position:fixed;left:20px;bottom:20px;z-index:200;
+    display:flex;align-items:center;gap:10px;
+    padding:10px 12px 10px 14px;border-radius:var(--radius-full);
+    background:var(--color-card-glass);
+    backdrop-filter:blur(18px) saturate(160%);
+    -webkit-backdrop-filter:blur(18px) saturate(160%);
+    border:1px solid var(--glass-border);
+    box-shadow:var(--shadow-md);
+    font-size:.82rem;font-weight:600;
+    transition:opacity .3s var(--ease-out),transform .3s var(--ease-out);
+  }
+  .tpl-watermark[hidden]{display:none;}
+  .tpl-watermark svg{width:16px;height:16px;flex-shrink:0;}
+  .tpl-watermark a{display:flex;align-items:center;gap:7px;color:var(--color-fg);}
+  .tpl-watermark a:hover{color:var(--color-primary);}
+  .tpl-watermark .tpl-tag{color:var(--color-muted-fg);font-weight:500;}
+  .tpl-watermark .tpl-close{
+    width:22px;height:22px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background:transparent;border:none;color:var(--color-muted-fg);cursor:pointer;
+    transition:background .2s,color .2s;
+  }
+  .tpl-watermark .tpl-close:hover{background:var(--color-muted);color:var(--color-fg);}
+  .tpl-watermark .tpl-close svg{width:13px;height:13px;}
+  @media (max-width:600px){
+    .tpl-watermark{left:12px;right:12px;bottom:12px;font-size:.78rem;}
+    .tpl-watermark .tpl-tag{display:none;}
+  }
 
   /* ---------- Reveal base state ---------- */
   .reveal{opacity:1;}
@@ -756,7 +790,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="year"></span> CloudNest Hosting. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> CloudNest Hosting. All rights reserved. <span class="footer-credit">Free template by <a href="https://github.com/EduGuate/CloudNestTemplate" target="_blank" rel="noopener">EduGuate — get it on GitHub</a></span></p>
       <div class="social-row">
         <button class="icon-btn" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
@@ -765,6 +799,16 @@
     </div>
   </div>
 </footer>
+
+<div class="tpl-watermark glass" id="tplWatermark" role="note" aria-label="Free template notice">
+  <a href="https://github.com/EduGuate/CloudNestTemplate" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.4 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+    <span><span class="tpl-tag">Free template —</span> Get it on GitHub</span>
+  </a>
+  <button class="tpl-close" id="tplWatermarkClose" aria-label="Dismiss">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -775,6 +819,17 @@
 
   /* Year */
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Template watermark dismiss */
+  var watermark = document.getElementById('tplWatermark');
+  var watermarkClose = document.getElementById('tplWatermarkClose');
+  var watermarkDismissed = false;
+  try { watermarkDismissed = localStorage.getItem('cloudnest-watermark-dismissed') === '1'; } catch(e){}
+  if (watermarkDismissed) watermark.hidden = true;
+  watermarkClose.addEventListener('click', function(){
+    watermark.hidden = true;
+    try { localStorage.setItem('cloudnest-watermark-dismissed', '1'); } catch(e){}
+  });
 
   /* Theme toggle */
   var root = document.documentElement;
